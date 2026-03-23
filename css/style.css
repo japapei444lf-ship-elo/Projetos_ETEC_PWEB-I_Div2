@@ -10,8 +10,47 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6; /*altura entre linhas 1.6x o tamanho da fonte*/
     color: #333; /*cor do texto cinza escuro*/
-    background: linear-gradient(135deg,#667eea 0%, #764ba2 100%); /*gradiente de fundo: 135deg e a direção, de roxo claro para roxo escuro*/
+    background: linear-gradient(135deg,#94c6e7 0%, #95f8f8 100%); /*gradiente de fundo: 135deg e a direção, de roxo claro para roxo escuro*/
+    min-height: 100vh;/*vh = viewport heigth, Minimo de 100% da altura da tela*/  
+}
+header{
+     background-color: rgba(255, 255, 255, 0.25);/*branco com 95% de opacidade (transparencia*)/
     padding: 1rem 5%; /*1rem = 16px tamanho padrão da fonte, 5% da largura do container*/
     display: flex; /*ativa o flexbox para layout flexível*/
     align-items: center; /*alinha os itens verticalmente ao centro*/
+    justify-content: space-between;/*espaço entre os itens (logo de um lado e o meu do outro*/
+    flex-wrap: wrap;/*permite quebra de linha em telas pequenas*/
+    gap: 1rem;/*espaçamento entre os itens flexiveis*/
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);/*sombra: eixo x, eixo y desfoque a cor 0.1 (alpha)*/
+    position: sticky;/*grudar o cabeçalho ao rolar a página*/
+    top:0;/* distancia do topo ao grudar*/
+    z-index: index 1000;/* garante que fique acima dos outros elementos*/
+}
+header img{
+    height: 140px;/*altura fixa em pixel*/
+    width: auto;/*largura automatica para manter a proporção de acordo com a altura*/
+    transition: transform 0.3 ease;/*transição suave de 3 segundos para animação*/
+}
+header img:hover{/*hover = quando passa o maouse faz alguma coisa*/
+    transform: scale(1.05);/*aumentar em 55 a minha imagem*/
+}
+/*===NAVEGAÇÃO nav===*/nav{
+    display: flex;
+    gap: 2rem;/*32px de espaçamento entre os links*/
+    flex-wrap: wrap;
+}
+nav a{
+    text-decoration: none;/*remover o sublinhado padrão do link*/
+    color: rgb(2, 41, 41);/*cor aqua*/
+    font-weight: 600;/*peso da fonte (semi negrito0*/
+    padding: 0.5rem 1 rem;/*8px em cima/baixo, 16px nas laterais*/
+    border-radius: 25%;/*bordas arredondadas*/
+    transition: all 0.3 ease;/*transição suave para todas as propriedades*/
+    position: relative;/*necessário para o pseudo elemento ::after*/
+}
+nav a:hover{
+    background-color: aquamarine;
+    color: rgb(52, 159, 253);
+    transform: translate(-2px);/*move 2px para cima*/
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);/*sombra roxa suave*/
 }
